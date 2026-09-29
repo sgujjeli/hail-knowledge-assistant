@@ -34,6 +34,7 @@ class Settings(BaseSettings):
     # ── Anthropic (Claude Sonnet — fallback LLM) ─────────────────────────
     anthropic_api_key: str = ""
     enable_anthropic_fallback: bool = False   # set True in .env to activate
+    enable_swagger: bool = False              # set True to expose /docs in production
 
     # ── PostgreSQL ────────────────────────────────────────────────────────
     database_url: str  # postgresql+asyncpg://user:pass@host:5432/hail

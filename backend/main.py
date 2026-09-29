@@ -60,12 +60,15 @@ app = FastAPI(
     ),
     version="1.0.0",
     lifespan=lifespan,
+    docs_url="/docs" if settings.enable_swagger else None,
+    redoc_url="/redoc" if settings.enable_swagger else None,
+    openapi_url="/openapi.json" if settings.enable_swagger else None,
 )
 
 # ── CORS — allow Next.js frontend ────────────────────────────────────────────
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://hailoop.co.uk"],
+    allow_origins=["http://localhost:3000", "https://hailoop.co.uk", "https://hail-ka.netlify.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
