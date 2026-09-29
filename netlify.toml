@@ -2,7 +2,8 @@
   package = "@netlify/plugin-nextjs"
 
 [build]
-  command = "npm run build"
+  base = "frontend"
+  command = "npm ci && npm run build"
   publish = ".next"
 
 [[redirects]]
